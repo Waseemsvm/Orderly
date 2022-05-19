@@ -1,0 +1,169 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+>
+	<Dialog
+		id="addCustomerDialog"
+		contentHeight="80%"
+		contentWidth="100%"
+		title="{i18n>addCustomerTitle}"
+		icon="sap-icon://add"
+	>
+		<beginButton>
+			<Button
+				text="{i18n>addButtonText}"
+				press=".onAddCustomer"
+			/>
+		</beginButton>
+		<endButton>
+			<Button
+				text="{i18n>cancelButtonText}"
+				press=".onCloseCustomer"
+			/>
+		</endButton>
+		<content>
+			<VBox
+				class="sapUiSmallMargin"
+				width="80%"
+			>
+				<f:SimpleForm
+					id="SimpleFormToolbar"
+					editable="true"
+					layout="ResponsiveGridLayout"
+					labelSpanXL="4"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="0"
+					emptySpanL="4"
+					emptySpanM="0"
+					emptySpanS="0"
+					columnsXL="2"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false"
+					ariaLabelledBy="Title1"
+				>
+					<f:content>
+						<Toolbar ariaLabelledBy="ProfileSection">
+							<Title
+								id="ProfileSection"
+								text="{i18n>personalDetailsText}"
+							/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Label text="{i18n>nameLabel}"/>
+						<Input
+							placeholder="{i18n>namePlaceholder}"
+							id="customerName"
+							change=".isValidName"
+							valueStateText="{i18n>invalidName}"
+						/>
+						<Label text="{i18n>dateOfBirth}"/>
+						<DateTimePicker
+							id="DOB"
+							placeholder="{i18n>dobPlaceholder}"
+						/>
+						<Toolbar ariaLabelledBy="ContactSection">
+							<Title
+								id="ContactSection"
+								text="{i18n>contactText}"
+							/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Label text="Email"/>
+						<Input
+							type="Email"
+							id="customerEmail"
+							placeholder="{i18n>emailPlaceholder}"
+							change=".isValidEMail"
+							valueStateText="{i18n>invalidEmail}"
+						/>
+						<Label text="{i18n>mobileText}"/>
+						<Input
+							type="Number"
+							placeholder="{i18n>mobileNumerPlaceholder}"
+							id="mobileNumber"
+							valueStateText="{i18n>invalidPhoneNumber}"
+							change=".onValidPhoneNumber"
+						/>
+						<Toolbar ariaLabelledBy="AddressSection">
+							<Title
+								id="AddressSection"
+								text="{i18n>addressText}"
+							/>
+							<ToolbarSpacer/>
+						</Toolbar>
+						<Label text="{i18n>address1Text}"/>
+						<Input
+							placeholder="{i18n>streetPlaceholder}"
+							id="street"
+						>
+							<layoutData>
+								<l:GridData span="XL2 L1 M6 S12"/>
+							</layoutData>
+						</Input>
+						<Input
+							type="Number"
+							placeholder="{i18n>addressNoPlaceholder}"
+							id="no"
+						/>
+						<Label text="{i18n>areaDistrictPlaceholder}"/>
+						<Input
+							placeholder="{i18n>areaPlaceholder}"
+							id="area"
+						/>
+						<Input
+							placeholder="{i18n>districtPlaceholder}"
+							id="district"
+						/>
+						<Label text="{i18n>zipCityPlaceholder}"/>
+						<Input
+							type="Number"
+							placeholder="{i18n>zipCodePlaceholder}"
+							id="pin"
+						>
+							<layoutData>
+								<l:GridData span="XL2 L1 M3 S12"/>
+							</layoutData>
+						</Input>
+						<Input
+							placeholder="{i18n>cityPlaceholder}"
+							id="city"
+						/>
+						<Label text="{i18n>stateText}"/>
+						<Input
+							placeholder="{i18n>statePlaceholder}"
+							id="state"
+						/>
+						<Label text="{i18n>countryText}"/>
+						<Select id="country">
+							<items>
+								<core:Item
+									text="{i18n>itemEnglandText}"
+									key="{i18n>itemEnglandKey}"
+								/>
+								<core:Item
+									text="{i18n>itemGermanyText}"
+									key="{i18n>itemGermanyKey}"
+								/>
+								<core:Item
+									text="{i18n>itemUSAText}"
+									key="{i18n>itemUSAKey}"
+								/>
+								<core:Item
+									text="{i18n>itemIndiaText}"
+									key="{i18n>itemIndiaKey}"
+								/>
+							</items>
+						</Select>
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+		</content>
+	</Dialog>
+</c:FragmentDefinition>

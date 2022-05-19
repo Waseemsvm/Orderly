@@ -1,0 +1,35 @@
+[
+    {
+        "CustomerID": "1A1B1A",
+        "Name": "John ",
+        "DOB": "Jan 1, 2021, 2:47:44 PM",
+        "RegisteredOn": "Jan 1, 2021, 2:47:44 PM",
+        "MobileNumber": "1234567890",
+        "MobileNumVerified": true,
+        "Email": "john.doe@gmail.com",
+        "EmailVerified": true,
+        "address": "BBCCAC"
+    },
+    {
+        "CustomerID": "1A1B1B",
+        "Name": "Jack",
+        "DOB": "Jan 1, 2021, 2:47:44 PM",
+        "RegisteredOn": "Jan 1, 2021, 2:47:44 PM",
+        "MobileNumber": "1234567890",
+        "MobileNumVerified": false,
+        "Email": "jack@hotmail.com",
+        "EmailVerified": true,
+        "address": "BBCCAB"
+    },
+    {
+        "CustomerID": "1A1B1C",
+        "Name": "Jim",
+        "DOB": "Jan 1, 2021, 2:47:44 PM",
+        "RegisteredOn": "Jan 1, 2021, 2:47:44 PM",
+        "MobileNumber": "1234567890",
+        "MobileNumVerified": true,
+        "Email": "Jim.c@yahoomail.com",
+        "EmailVerified": true,
+        "address": "BBCCAA"
+    }
+]

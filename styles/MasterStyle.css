@@ -1,0 +1,52 @@
+::selection {
+    background-color: black;
+    color: white;
+}
+
+.removeMarginEnd {
+    margin-right: 0 !important;
+}
+
+
+.orderState {
+    justify-content: space-around;
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.colorMe {
+    margin-left: 10%;
+}
+
+@media (max-width: 650px) {
+    .orderState {
+        width: 20% !important;
+    }
+}
+
+
+.productImage {
+    border-radius: 10%;
+}
+
+.productImage:hover {
+    box-shadow: 0.5px 0.5px 2px 2px grey;
+    transition: box-shadow 0.5s;
+}
+
+.overFlowScroll {
+    overflow: scroll;
+}
+/* 
+#__item0-__xmlview0--idProductsTable-0 .makeCard tr {
+    border: 2px solid black !important;
+} */
+
+/* order details view */
+.orderDetailsPanel {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 0.5px 2px 2px grey;
+}
+
+.formattedDate {}

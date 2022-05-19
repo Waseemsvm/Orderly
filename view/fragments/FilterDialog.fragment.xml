@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<ViewSettingsDialog
+		confirm="handleFilterDialogConfirm">
+		<filterItems>
+            <ViewSettingsFilterItem
+                text="{i18n>totalAmount}"
+                key="totalAmount"
+                multiSelect="false">
+                <items>
+                    <ViewSettingsItem text="{i18n>lessThan1000}" key="totalAmount___LE___1000___X" />
+                    <ViewSettingsItem text="{i18n>between1000and10000}" key="totalAmount___BT___1000___10000" />
+                    <ViewSettingsItem text="{i18n>moreThan10000}" key="totalAmount___GT___10000___X" />
+                </items>
+            </ViewSettingsFilterItem>
+			<ViewSettingsFilterItem
+				text="{i18n>orderStatus}"
+				key="orderStatus"
+				multiSelect="false">
+				<items>
+					<ViewSettingsItem text="{i18n>deliveredText}" key="orderStatus___EQ___A___X" />
+					<ViewSettingsItem text="{i18n>shippedText}" key="orderStatus___EQ___B___X" />
+					<ViewSettingsItem text="{i18n>notDeliveredText}" key="orderStatus___EQ___C___X" />
+				</items>
+			</ViewSettingsFilterItem>
+		</filterItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

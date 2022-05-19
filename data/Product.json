@@ -1,0 +1,35 @@
+[
+    {
+        "id": "A1A2A1",
+        "Name": "Red Gear Mouse",
+        "productType": "electronics",
+        "AvailabelQuantity": 200,
+        "productImage": "https://d2xamzlzrdbdbn.cloudfront.net/products/3c670d1e-4a9c-47dc-8b7f-1a128bba8ec9.jpg",
+        "discount": 100,
+        "price": 2500,
+        "rating": 5,
+        "CurrencyCode": "INR"
+    },
+    {
+        "id": "A1A2A2",
+        "Name": "PowerBank",
+        "productType": "electronics",
+        "AvailabelQuantity": 200,
+        "productImage": "https://www.borofone.com/wp-content/uploads/2020/10/borofone-bt35a-smart-force-digital-display-power-bank-20000mah.jpg",
+        "discount": 200,
+        "price": 2800,
+        "rating": 5,
+        "CurrencyCode": "INR"
+    },
+    {
+        "id": "A1A2A3",
+        "Name": "Titanic Watch",
+        "productType": "fashion",
+        "AvailabelQuantity": 200,
+        "productImage": "https://m.media-amazon.com/images/I/61FxsUbnavL._SL1500_.jpg",
+        "discount": 500,
+        "price": 3000,
+        "rating": 5,
+        "CurrencyCode": "INR"
+    }
+]

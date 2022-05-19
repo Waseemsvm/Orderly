@@ -1,0 +1,70 @@
+<mvc:View
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<form:Form>
+		<form:layout>
+			<form:ResponsiveGridLayout
+				adjustLabelSpan="true"
+				columnsL="2"
+				columnsM="2"
+				emptySpanL="0"
+				emptySpanM="0"
+				emptySpanS="0"
+				emptySpanXL="-1"
+				labelSpanL="4"
+				labelSpanM="12"
+				labelSpanS="6"
+				labelSpanXL="-1"
+				singleContainerFullSize="false"
+			/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="{i18n>customerIDLabel}">
+						<form:fields>
+							<Text text="{customer>/CustomerID}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>nameLabel}">
+						<form:fields>
+							<Text text="{customer>/Name}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>registeredDateLabel}">
+						<form:fields>
+							<DateTimePicker
+								editable="false"
+								id="customerRedistrationDatePicker"
+								value="{customer>/RegisteredOn}"
+								valueFormat="MMM d, y, HH:mm:ss a"
+								displayFormat="MMM dd, yyyy"
+								width="120px"
+								class="sapUiSmallMarginBottom"
+							/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="{i18n>mobileNumberLabel}">
+						<form:fields>
+							<Text text="{customer>/MobileNumber}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>emailLabel}">
+						<form:fields>
+							<Text text="{customer>/Email}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+</mvc:View>

@@ -1,0 +1,45 @@
+<mvc:View
+	xmlns:f="sap.f"
+	controllerName="waseem.ui.controller.App"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<Shell>
+		<App id="app">
+			<pages>
+				<Page>
+					<customHeader>
+						<f:ShellBar
+							homeIcon="images/SplashScreenLogo.svg"
+							homeIconPressed=".logoPressed"
+							showProductSwitcher="true"
+							copilotPressed=".goHome"
+							showCopilot="true"
+							productSwitcherPressed=".onproductSwitcherPressed"
+						>
+							<f:searchManager>
+								<f:SearchManager
+									id="pageSearch"
+									placeholder="Search Here"
+									search=".onSearchText"
+								/>
+							</f:searchManager>
+							<f:profile>
+								<Avatar
+									initials="UI"
+									press=".onAvatarPress"
+								/>
+							</f:profile>
+						</f:ShellBar>
+					</customHeader>
+					<f:FlexibleColumnLayout
+						id="fcl"
+						stateChange=".onStateChanged"
+						layout="{/layout}"
+						backgroundDesign="Solid"
+					/>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>

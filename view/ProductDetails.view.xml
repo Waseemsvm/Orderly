@@ -1,0 +1,77 @@
+<mvc:View
+	controllerName="waseem.ui.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+>
+	<Table
+		id="productsTable"
+		mode="SingleSelectMaster"
+		itemPress=".onProductItemPress"
+		items="{
+			path: 'products>/'
+		}"
+	>
+		<columns>
+			<Column/>
+			<Column hAlign="End"/>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation">
+				<cells>
+					<ObjectIdentifier
+						title="{products>id}"
+						text="{products>Name} x {products>quantity}"
+					/>
+					<ObjectNumber
+						number="{
+							parts: [{
+								path: 'products>price'
+							}, {
+								path: 'products>CurrencyCode'
+							}, {
+								path: 'products>quantity'
+							}],
+							formatter: '.formatter.currencyFormatter'
+						}"
+						unit="{products>CurrencyCode}"
+						state="{
+							path: 'products>price',
+							formatter: '.formatter.productPriceFormatter'
+						}"
+					/>
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	<ObjectListItem
+		title="Summary"
+		number="{
+			parts: [{
+				path: 'orders>price'
+			}, {
+				path: 'orders>currencyCode'
+			}],
+			formatter: '.formatter.currencyFormatter'
+		}"
+		numberUnit="INR"
+		numberState="{
+			path: 'orders>price',
+			formatter: '.formatter.productPriceFormatter'
+		}"
+	>
+		<firstStatus>
+			<ObjectStatus
+				text="- {orders>discount} {orders>currencyCode}"
+				state="Error"
+			/>
+		</firstStatus>
+		<secondStatus>
+			<ObjectStatus
+				text="= {orders>totalAmount} {orders>currencyCode}"
+				state="Success"
+			/>
+		</secondStatus>
+	</ObjectListItem>
+</mvc:View>

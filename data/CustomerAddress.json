@@ -1,0 +1,35 @@
+[
+    {
+        "addressID": "BBCCAA",
+        "flat": "10",
+        "street": "OPH1 road",
+        "area": "Brookefiled",
+        "city": "Bangalore",
+        "district": "Bangalore Urban",
+        "state": "Karnataka",
+        "pin": "123456",
+        "country": "India"
+    },
+    {
+        "addressID": "BBCCAB",
+        "flat": "20",
+        "street": "OPH2 road",
+        "area": "whitefield",
+        "city": "Bangalore",
+        "district": "Bangalore Urban",
+        "state": "Karnataka",
+        "pin": "123456",
+        "country": "United States"
+    },
+    {
+        "addressID": "BBCCAC",
+        "flat": "30",
+        "street": "OPH3 road",
+        "area": "Hoodi",
+        "city": "Bangalore",
+        "district": "Bangalore Urban",
+        "state": "Karnataka",
+        "pin": "123456",
+        "country": "United Kingdom"
+    }
+]
