@@ -1,0 +1,21 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+
+<Dialog
+id="orderAddSuccessDialog"
+contentWidth="200px"
+contentHeight="200px"
+title="{i18n>orderAddSuccessTitle}">
+
+    <Image
+        mode="Image"
+        src="../../images/OrderSuccess.gif"
+        height="200px"
+        width="320px"
+    >    </Image>
+
+</Dialog>
+
+</c:FragmentDefinition>

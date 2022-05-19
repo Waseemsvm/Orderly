@@ -1,0 +1,118 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:c="sap.ui.core"
+>
+
+<Dialog
+id="addProductDialog"
+    contentHeight="80%"
+    contentWidth="80%"
+    title="{i18n>addProductLabel}"
+>
+    
+        <beginButton>
+            <Button
+               text="{i18n>addButtonText}"
+               press=".onAddProduct"/>
+         </beginButton>
+         <endButton>
+            <Button
+            text="{i18n>cancelButtonText}"
+            press=".onCloseAddProduct"/>
+         </endButton>
+         <content>
+
+        <VBox class="sapUiLargeMargin" justifyContent="Center" >
+            <f:SimpleForm
+            editable="true"
+            layout="ResponsiveGridLayout"
+            labelSpanXL="4"
+            labelSpanL="3"
+            labelSpanM="4"
+            labelSpanS="12"
+            adjustLabelSpan="false"
+            emptySpanXL="0"
+            emptySpanL="4"
+            emptySpanM="0"
+            emptySpanS="0"
+            columnsXL="2"
+            columnsL="1"
+            columnsM="1"
+            singleContainerFullSize="false"
+            ariaLabelledBy="Title1" >
+            <f:content>
+                <Toolbar  ariaLabelledBy="ProductSection">
+                    <Title
+                        id="ProductSection"
+                        text="{i18n>productSectionText}"></Title>
+                    <ToolbarSpacer />
+                        
+                </Toolbar>
+                <Label text="{i18n>productNameLabel}">
+                </Label>
+                <Input placeholder="{i18n>productNamePlaceholder}" id="productName">
+                </Input>
+
+                <Label text="{i18n>productTypeLabel}">
+                </Label>
+
+                <ComboBox 
+                    items="{categories>/}"  
+                    id="categoryComboBox" 
+                    change=".onCategoriesCheck"
+                    placeholder="{i18n>categoriesPlaceholder}">
+                    <items>
+                        <c:Item key="{categories>category}" text="{categories>category}"></c:Item>
+                    </items>
+                </ComboBox>
+
+                <Label text="{i18n>productImageLabel}">
+                </Label>
+                <Input 
+                    type="Url" 
+                    placeholder="{i18n>imageLinkPlaceholder}" 
+                    id="imageLink">
+                </Input>
+                <Label text="{i18n>priceDiscountText}">
+                </Label>
+                <Input 
+                    type="Number" 
+                    placeholder="{i18n>priceLabel}" 
+                    id="productPrice">
+                </Input>
+                <Input 
+                    type="Number" 
+                    placeholder="{i18n>discountLabel}" 
+                    id="productDiscountPrice">
+                </Input>
+                <Label text="{i18n>availableQuantityPlaceholder}">
+                </Label>
+                <Input 
+                    type="Number" 
+                    placeholder="{i18n>availableQuantityPlaceholder}" 
+                    id="quantity">
+                </Input>
+                <Label text="{i18n>ratingText}">
+                </Label>
+                <RatingIndicator
+                    id="rating"
+                    displayOnly="false"
+                    editable="true"
+                    enabled="true"
+                    maxValue="5"
+                    value="0"
+                    visualMode="Half"
+                    change=".onRating"
+                >
+                    
+                </RatingIndicator>
+            </f:content>
+        </f:SimpleForm>
+        </VBox>
+
+        </content>
+
+</Dialog>
+
+</c:FragmentDefinition>

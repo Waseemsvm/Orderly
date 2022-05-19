@@ -1,0 +1,96 @@
+<mvc:View
+	controllerName="waseem.ui.controller.DetailDetail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+>
+	<!-- <Text text="{product>/productType}"></Text> -->
+	<!-- <Link href="{product>/productImage}" text="click me"></Link> -->
+	<HBox
+		width="100%"
+		justifyContent="End"
+	>
+		<!-- <Button
+				 	class="sapUiSmallMarginEnd"
+                    icon="sap-icon://delete"
+                    press=".onDeleteProduct"
+                >
+                </Button> -->
+		<Button
+			icon="sap-icon://decline"
+			press=".closeEndPage"
+		/>
+	</HBox>
+	<HBox
+		wrap="Wrap"
+		height="90%"
+		width="100%"
+		justifyContent="SpaceAround"
+		alignItems="Center"
+	>
+		<Image
+			id="productImage"
+			activeSrc="{product>/productImage}"
+			alt="{product>/Name}"
+			class="productImage"
+			backgroundSize="50%"
+			src="{product>/productImage}"
+			width="250px"
+			height="250px"
+		/>
+		<form:Form width="100%">
+			<form:layout>
+				<form:ResponsiveGridLayout
+					labelSpanM="12"
+					labelSpanS="6"
+				/>
+			</form:layout>
+			<form:formContainers>
+				<form:FormContainer>
+					<form:formElements>
+						<form:FormElement label="{i18n>productIdLabel}">
+							<form:fields>
+								<Text text="{product>/id}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>productNameLabel}">
+							<form:fields>
+								<Text text="{product>/Name}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>categoryLabel}">
+							<form:fields>
+								<Text text="{product>/productType}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>priceLabel}">
+							<form:fields>
+								<Text text="{product>/price} {i18n>unit}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>discountLabel}">
+							<form:fields>
+								<Text text="{product>/discount} {i18n>unit}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>subtotalLabel}">
+							<form:fields>
+								<Text text="{product>/total} {i18n>unit}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>quantityLabel}">
+							<form:fields>
+								<Text text="{product>/quantity}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="{i18n>totalAmount}">
+							<form:fields>
+								<Text text="{= ${product>/total} * ${product>/quantity}} {i18n>unit}"/>
+							</form:fields>
+						</form:FormElement>
+					</form:formElements>
+				</form:FormContainer>
+			</form:formContainers>
+		</form:Form>
+	</HBox>
+</mvc:View>

@@ -1,0 +1,162 @@
+{
+    "_version": "1.1.0",
+    "sap.app": {
+        "id": "waseem.ui",
+        "i18n": {
+            "bundleUrl": "i18n/i18n.properties",
+            "supportedLocales": [
+                "en",
+                "fr"
+            ],
+            "fallbackLocale": ""
+        },
+        "type": "application",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "waseem.ui.view.App",
+            "type": "XML",
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.93",
+            "libs": {
+                "sap.m": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "styles/MasterStyle.css"
+                }
+            ]
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "waseem.ui.i18n.i18n",
+                    "supportedLocales": [
+                        ""
+                    ],
+                    "fallbackLocale": ""
+                }
+            },
+            "customers": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "data/Customer.json"
+            }
+        },
+        "config": {
+            "fullWidth": true
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "waseem.ui.view",
+                "controlId": "fcl",
+                "transition": "slide",
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "profile",
+                    "name": "profile",
+                    "target": "profile",
+                    "layout": "EndColumnFullScreen"
+                },
+                {
+                    "pattern": "addDetails",
+                    "name": "addDetails",
+                    "target": "addDetails",
+                    "layout": "EndColumnFullScreen"
+                },
+                {
+                    "pattern": "",
+                    "name": "splashScreen",
+                    "target": [
+                        "splashScreen"
+                    ]
+                },
+                {
+                    "pattern": "home",
+                    "name": "home",
+                    "target": [
+                        "master"
+                    ]
+                },
+                {
+                    "pattern": ":layout:",
+                    "name": "master",
+                    "target": [
+                        "master"
+                    ]
+                },
+                {
+                    "pattern": "detail/{order}/{layout}",
+                    "name": "detail",
+                    "target": [
+                        "master",
+                        "detail"
+                    ]
+                },
+                {
+                    "pattern": "detailDetail/{product}/{quantity}/{layout}",
+                    "name": "detailDetail",
+                    "target": [
+                        "master",
+                        "detail",
+                        "detailDetail"
+                    ]
+                }
+            ],
+            "targets": {
+                "splashScreen": {
+                    "name": "SplashScreen",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "master": {
+                    "name": "Master",
+                    "controlAggregation": "beginColumnPages",
+                    "transition": "flip"
+                },
+                "detail": {
+                    "name": "Detail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailDetail": {
+                    "name": "DetailDetail",
+                    "controlAggregation": "endColumnPages"
+                },
+                "profile": {
+                    "name": "Profile",
+                    "controlAggregation": "endColumnPages"
+                },
+                "addDetails": {
+                    "name": "addDetails",
+                    "controlAggregation": "endColumnPages"
+                }
+            }
+        }
+    }
+}

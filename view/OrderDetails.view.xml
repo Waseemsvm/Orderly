@@ -1,0 +1,134 @@
+<mvc:View
+	controllerName="waseem.ui.controller.Detail"
+	xmlns:m="sap.m"
+	xmlns:tnt="sap.tnt"
+	xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<form:Form>
+		<form:layout>
+			<form:ResponsiveGridLayout
+				adjustLabelSpan="true"
+				columnsL="2"
+				columnsM="2"
+				emptySpanL="0"
+				emptySpanM="0"
+				emptySpanS="0"
+				emptySpanXL="-1"
+				labelSpanL="4"
+				labelSpanM="12"
+				labelSpanS="6"
+				labelSpanXL="-1"
+				singleContainerFullSize="false"
+			/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="{i18n>orderID}">
+						<form:fields>
+							<m:Text text="{orders>orderID}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>orderedBy}">
+						<form:fields>
+							<m:Text text="{orders>customerName}:({orders>orderedBy})"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>orderedDate}">
+						<form:fields>
+							<m:DateTimePicker
+								editable="false"
+								id="orderDatePicker"
+								value="{
+									path: 'orders>orderDate'
+								}"
+								valueFormat="MMM d, y, HH:mm:ss a"
+								displayFormat="MMM dd, yyyy"
+								width="130px"
+								class="sapUiSmallMarginBottom"
+							/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>deliveryAddressLabel}">
+						<form:fields>
+							<m:VBox>
+								<m:Text text="{address>/flat}, {address>/street}"/>
+								<m:Text text="{address>/area}, {address>/city}"/>
+								<m:Text text="{address>/district}, {address>/state} - {address>/pin}"/>
+							</m:VBox>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="{i18n>orderStatus}">
+						<form:fields>
+							<tnt:InfoLabel
+								text="{
+									parts: [{
+										path: 'orders>orderStatus'
+									}],
+									formatter: '.formatter.availableStatus'
+								}"
+								colorScheme="{
+									path: 'orders>orderStatus',
+									formatter: '.formatter.availableState'
+								}"
+							/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+			<form:FormContainer>
+				<form:FormElement label="{i18n>deliveryDate}">
+					<form:fields>
+						<m:DateTimePicker
+							editable="false"
+							id="DTP3"
+							value="{
+								path: 'orders>deliveryDate'
+							}"
+							width="130px"
+							valueFormat="MMM d, y, HH:mm:ss a"
+							displayFormat="MMM dd, yyyy"
+							class="sapUiSmallMarginBottom"
+						/>
+					</form:fields>
+				</form:FormElement>
+				<form:FormElement label="{i18n>deliveredDate}">
+					<form:fields>
+						<m:DateTimePicker
+							editable="false"
+							id="DTP2"
+							value="{
+								path: 'orders>deliveredDate'
+							}"
+							width="130px"
+							valueFormat="MMM d, y, HH:mm:ss a"
+							displayFormat="MMM dd, yyyy"
+							class="sapUiSmallMarginBottom"
+						/>
+					</form:fields>
+				</form:FormElement>
+				<form:FormElement label="{i18n>price}">
+					<form:fields>
+						<m:Text text="{orders>price} {orders>currencyCode}"/>
+					</form:fields>
+				</form:FormElement>
+				<form:FormElement label="{i18n>couponCodeLabel}">
+					<form:fields>
+						<m:Text text="{orders>coupon}"/>
+					</form:fields>
+				</form:FormElement>
+				<form:FormElement label="{i18n>discountLabel}">
+					<form:fields>
+						<m:Text text="{orders>discount} {orders>currencyCode}"/>
+					</form:fields>
+				</form:FormElement>
+				<form:FormElement label="{i18n>totalAmount}">
+					<form:fields>
+						<m:Text text="{orders>totalAmount} {orders>currencyCode}"/>
+					</form:fields>
+				</form:FormElement>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+</mvc:View>

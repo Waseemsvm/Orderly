@@ -1,0 +1,194 @@
+<mvc:View
+	xmlns:f="sap.f"
+	controllerName="waseem.ui.controller.Master"
+	xmlns:m="sap.m"
+	xmlns:tnt="sap.tnt"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<f:DynamicPage id="dynamicPageId">
+		<f:content>
+			<m:Table
+				id="idProductsTable"
+				mode="SingleSelectMaster"
+				itemPress="onListItemPressed"
+				class="sapFDynamicPageAlignContent "
+				width="auto"
+				items="{
+					path: 'orders>/'
+				}"
+				sticky="HeaderToolbar"
+			>
+				<m:headerToolbar>
+					<m:OverflowToolbar>
+						<m:ToolbarSpacer/>
+						<m:Toolbar>
+							<m:SearchField
+								placeholder="{i18n>searchHerePlaceholder}"
+								liveChange=".onLiveSearch"
+							/>
+						</m:Toolbar>
+						<m:Button
+							tooltip="{i18n>filterTooltip}"
+							icon="sap-icon://filter"
+							press=".handleFilterButtonPressed"
+						/>
+						<m:Button
+							tooltip="{i18n>groupTooltip}"
+							icon="sap-icon://group-2"
+							press=".handleGroupButtonPressed"
+						/>
+						<m:Button
+							tooltip="{i18n>sortTooltip}"
+							icon="sap-icon://sort"
+							press=".handleSortButtonPressed"
+						/>
+					</m:OverflowToolbar>
+				</m:headerToolbar>
+				<m:infoToolbar>
+					<m:OverflowToolbar
+						id="vsdFilterBar"
+						visible="false"
+					>
+						<m:Text id="vsdFilterLabel"/>
+					</m:OverflowToolbar>
+				</m:infoToolbar>
+				<m:columns>
+					<m:Column width="10em">
+						<m:Text text="{i18n>orderID}"/>
+					</m:Column>
+					<m:Column
+						width="10em"
+						demandPopin="false"
+						minScreenWidth="tablet"
+						popinDisplay="Inline"
+					>
+						<m:header>
+							<m:Text text="{i18n>orderedBy}"/>
+						</m:header>
+					</m:Column>
+					<m:Column
+						width="12em"
+						hAlign="Left"
+						styleClass="removeMarginEnd"
+						minScreenWidth="tablet"
+						popinDisplay="WithoutHeader"
+						demandPopin="false"
+					>
+						<m:Text
+							text="{i18n>orderedDate}"
+							class="sapUiSmallMarginEnd"
+						/>
+					</m:Column>
+					<m:Column
+						hAlign="Left"
+						demandPopin="true"
+						minScreenWidth="tablet"
+						popinDisplay="Inline"
+						width="10em"
+					>
+						<m:Text text="{i18n>orderStatus}"/>
+					</m:Column>
+					<m:Column
+						hAlign="End"
+						width="8em"
+						minScreenWidth="desktop"
+					>
+						<m:Text text="{i18n>price}"/>
+					</m:Column>
+					<m:Column
+						hAlign="End"
+						width="8em"
+						minScreenWidth="desktop"
+					>
+						<m:Text text="{i18n>discount}"/>
+					</m:Column>
+					<m:Column
+						hAlign="End"
+						width="8em"
+					>
+						<m:Text text="{i18n>totalAmount}"/>
+					</m:Column>
+				</m:columns>
+				<m:items>
+					<m:ColumnListItem type="Navigation">
+						<m:cells>
+							<m:ObjectStatus
+								class="sapUiSmallMarginBottom"
+								text="{orders>orderID}"
+								active="true"
+								state="Information"
+								icon="sap-icon://customer-order-entry"
+							/>
+							<m:ObjectStatus
+								class="sapUiSmallMarginBottom"
+								text="{orders>customerName}:({orders>orderedBy})"
+								active="true"
+							/>
+							<m:HBox alignItems="Center">
+								<core:Icon
+									src="sap-icon://calendar"
+									class="sapUiSmallMarginEnd"
+								/>
+								<m:DateTimePicker
+									editable="false"
+									id="DTP1"
+									value="{
+										path: 'orders>orderDate'
+									}"
+									valueFormat="MMM d, y, HH:mm:ss a"
+									displayFormat="MMM dd, yyyy"
+									width="130px"
+									class="sapUiSmallMarginBottom formattedDate"
+								/>
+							</m:HBox>
+							<tnt:InfoLabel
+								text="{
+									path: 'orders>orderStatus',
+									formatter: '.formatter.availableStatus'
+								}"
+								colorScheme="{
+									path: 'orders>orderStatus',
+									formatter: '.formatter.availableState'
+								}"
+							/>
+							<m:ObjectNumber
+								number="{
+									parts: [{
+										path: 'orders>price'
+									}, {
+										path: 'orders>currencyCode'
+									}],
+									formatter: '.formatter.currencyFormatter'
+								}"
+								unit="{i18n>unit}"
+							/>
+							<m:ObjectNumber
+								number="{
+									parts: [{
+										path: 'orders>discount'
+									}, {
+										path: 'orders>currencyCode'
+									}],
+									formatter: '.formatter.currencyFormatter'
+								}"
+								unit="{i18n>unit}"
+							/>
+							<m:ObjectNumber
+								number="{
+									parts: [{
+										path: 'orders>totalAmount'
+									}, {
+										path: 'orders>currencyCode'
+									}],
+									formatter: '.formatter.currencyFormatter'
+								}"
+								unit="{i18n>unit}"
+							/>
+						</m:cells>
+					</m:ColumnListItem>
+				</m:items>
+			</m:Table>
+		</f:content>
+	</f:DynamicPage>
+</mvc:View>

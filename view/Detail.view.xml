@@ -1,0 +1,48 @@
+<mvc:View
+	controllerName="waseem.ui.controller.Detail"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+>
+	<m:Page showHeader="false">
+		<m:HBox
+			width="100%"
+			justifyContent="End"
+		>
+			<!-- <m:Button
+                    icon="sap-icon://resize"
+                    press=".maximizeMiddlePage"
+                    class="sapUiSmallMarginEnd"
+                > 
+                </m:Button>-->
+			<m:Button
+				icon="sap-icon://decline"
+				press=".closeMiddlePage"
+			/>
+		</m:HBox>
+		<m:content>
+			<m:Panel
+				class="orderDetailsPanel"
+				backgroundDesign="Solid"
+				expandable="false"
+				headerText="{i18n>orderDetailsHeader}"
+			>
+				<mvc:XMLView viewName="waseem.ui.view.OrderDetails"/>
+			</m:Panel>
+			<m:Panel
+				class="customerDetailsPanel sapUiSmallMarginTop"
+				backgroundDesign="Solid"
+				expandable="true"
+				headerText="{i18n>customerDetailsHeader}"
+			>
+				<mvc:XMLView viewName="waseem.ui.view.CustomerDetails"/>
+			</m:Panel>
+			<m:Panel
+				backgroundDesign="Solid"
+				expandable="true"
+				headerText="{i18n>productDetailsHeader}"
+			>
+				<mvc:XMLView viewName="waseem.ui.view.ProductDetails"/>
+			</m:Panel>
+		</m:content>
+	</m:Page>
+</mvc:View>
