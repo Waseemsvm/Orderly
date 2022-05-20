@@ -11,7 +11,7 @@ title="{i18n>orderAddSuccessTitle}">
 
     <Image
         mode="Image"
-        src="../../images/OrderSuccess.gif"
+        src="images/OrderSuccess.gif"
         height="200px"
         width="320px"
     >    </Image>

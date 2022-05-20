@@ -11,10 +11,17 @@ title="{i18n>customerAddSuccessFragmentTitle}">
 
     <Image
         mode="Image"
-        src="../../images/celebrateCustomer.gif"
+        src="images/celebrateCustomer.gif"
         height="200px"
         width="320px"
     >    </Image>
+    <!-- <Image
+        mode="Image"
+        src="../../images/celebrateCustomer.gif"
+        height="200px"
+        width="320px"
+    >    </Image> -->
+    
 
 </Dialog>
 
