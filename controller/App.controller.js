@@ -5,9 +5,12 @@ sap.ui.define([
 
 	return BaseController.extend("waseem.ui.controller.App", {
 		onInit: function () {
+			document.getElementById("container").removeAttribute("class");
 			this.oRouter = this.getOwnerComponent().getRouter();
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
 			this.oRouter.attachBeforeRouteMatched(this.onBeforeRouteMatched, this);
+			
+			
 		},
 		onBeforeRouteMatched: function (oEvent) {
 			var oModel = this.getOwnerComponent().getModel();
