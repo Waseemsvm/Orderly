@@ -3,7 +3,7 @@
 	xmlns:m="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 >
-	<m:Page showHeader="false">
+	<m:Page showHeader="false"  busy="true" id="splashScreenPage">
 		<m:content>
 			<m:VBox
 				justifyContent="Center"

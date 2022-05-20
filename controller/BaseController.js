@@ -10,6 +10,7 @@ sap.ui.define([
     return Controller.extend("waseem.ui.controller.BaseController", {
         formatter: formatter,
         onInit: function () {
+            // alert('base controller ready');
 
         },
         onGoBack: function () {

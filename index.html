@@ -5,6 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       .container{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+       }
+
+       .container img{
+           display: block;
+         width: 100px;
+         height: 100px;
+         z-index: 999;
+       }
+
+    </style>
     <title>Final Case Study</title>
     <script id="sap-ui-bootstrap" src="./resources/sap-ui-core.js"
         data-sap-ui-theme="sap_belize" data-sap-ui-async="true" data-sap-ui-compatVersion="edge"
@@ -13,10 +30,14 @@
         }' data-sap-ui-oninit="module:sap/ui/core/ComponentSupport"></script>
 </head>
 
-<body class="sapUiBody" id="content">
-    <div data-sap-ui-component data-name="waseem.ui" id="container" settings='{
+<body class="sapUiBody" id="content" >
+    <div data-sap-ui-component data-name="waseem.ui" id="container" class="container" settings='{
             "id": "componentBody"
-        }'></div>
+        }' >
+       <div id="preloader" >
+           <img src="/images/ShoppingCart.gif" alt="Loading.. Please Wait">
+       </div>
+    </div>
 </body>
 
 </html>

@@ -25,7 +25,7 @@ sap.ui.define([
             }, 3000);
         },
         onAfterRendering: function () {
-
+            this.getView().byId("splashScreenPage").setBusy(false)
         },
         /**
          * @override

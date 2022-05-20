@@ -18,6 +18,8 @@
 					path: 'orders>/'
 				}"
 				sticky="HeaderToolbar"
+				enableBusyIndicator="true"
+				busyIndicatorSize="Medium"
 			>
 				<m:headerToolbar>
 					<m:OverflowToolbar>
