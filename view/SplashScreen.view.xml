@@ -11,7 +11,7 @@
 				width="100%"
 				height="100%"
 			>
-				<m:Image src="./images/SplashScreenLogo.svg"/>
+				<m:Image src="images/SplashScreenLogo.svg"/>
 			</m:VBox>
 		</m:content>
 	</m:Page>
