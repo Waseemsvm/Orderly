@@ -161,7 +161,7 @@ sap.ui.define([
                 orderPath = oEvent.getSource().getSelectedItem().getBindingContext("orders").getPath(),
                 order = orderPath.split("/").slice(-1).pop();
             this.oRouter.navTo("detail", { layout: oNextUIState.layout, order: order })
-            debugger;
+            // debugger;
         },
         getViewSettingsDialog: function (sDialogFragmentName) {
             var oView = this.getView();

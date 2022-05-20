@@ -285,7 +285,7 @@ sap.ui.define([
 			let price = this.getView().byId("productPrice").getValue();
 			let discount = this.getView().byId("productDiscountPrice").getValue();
 			let availabelQuantity = this.getView().byId("quantity").getValue();
-
+			console.log(`price ${price} discount ${discount}`);
 
 			if(price < discount){
 				this.getView().byId("productPrice").setValueState("Error");
