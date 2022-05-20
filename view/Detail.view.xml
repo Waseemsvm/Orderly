@@ -21,10 +21,12 @@
 		</m:HBox>
 		<m:content>
 			<m:Panel
+				id="orderDetailsPanel"
 				class="orderDetailsPanel"
 				backgroundDesign="Solid"
 				expandable="false"
 				headerText="{i18n>orderDetailsHeader}"
+				busy="{setBusyFalsePanel1>/busy}"
 			>
 				<mvc:XMLView viewName="waseem.ui.view.OrderDetails"/>
 			</m:Panel>
@@ -33,6 +35,7 @@
 				backgroundDesign="Solid"
 				expandable="true"
 				headerText="{i18n>customerDetailsHeader}"
+				busy="{setBusyFalsePanel1>/busy}"
 			>
 				<mvc:XMLView viewName="waseem.ui.view.CustomerDetails"/>
 			</m:Panel>
@@ -40,6 +43,7 @@
 				backgroundDesign="Solid"
 				expandable="true"
 				headerText="{i18n>productDetailsHeader}"
+				busy="{setBusyFalsePanel1>/busy}"
 			>
 				<mvc:XMLView viewName="waseem.ui.view.ProductDetails"/>
 			</m:Panel>

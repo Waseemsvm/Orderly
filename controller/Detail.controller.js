@@ -11,10 +11,15 @@ sap.ui.define([
                 this.oModel = this.getOwnerComponent().getModel(),
                 this.oRouter.getRoute("detail").attachPatternMatched(this._onOrderMatched, this);
                 this.oModel.setProperty("/layout", "TwoColumnsMidExpanded");
+
+                var oModel = new JSONModel({
+                    busy: true
+                });
+                this.getView().setModel(oModel, "setBusyFalsePanel1")
         },
         onProductItemPress: function (oEvent) {
 
-            debugger;
+            
             var oNextUIState = this.getOwnerComponent().getHelper().getNextUIState(2);
             // var productPath = oEvent.getSource().getSelectedItem().getBindingContext("items").getPath();
             var productPath = oEvent.getSource().getSelectedContextPaths()[0].slice(-1);
@@ -40,7 +45,7 @@ sap.ui.define([
             var sNextLayout = sap.f.LayoutType.MidColumnFullScreen;
             // debugger;
             this.oRouter.navTo("detail", { layout: sNextLayout, order: this._order });
-
+            
         },
         _onOrderMatched: function (oEvent) {
 
@@ -62,6 +67,7 @@ sap.ui.define([
 
             let productsData = [];
 
+            
             //loop through the customers model and find the customer object with the required customer id
             //set the model to the view as customer model
 
@@ -109,6 +115,8 @@ sap.ui.define([
             // debugger;
             // console.log(productsData);
             // return;
+
+            this.getView().getModel("setBusyFalsePanel1").setProperty("/busy", false)
 
         }
     });
