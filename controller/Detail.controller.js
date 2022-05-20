@@ -44,7 +44,7 @@ sap.ui.define([
         },
         _onOrderMatched: function (oEvent) {
 
-            debugger;
+            // debugger;
 
             this._order = oEvent.getParameter("arguments").order || this._order || "0";
             this.getView().bindElement({

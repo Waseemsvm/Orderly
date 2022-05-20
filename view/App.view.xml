@@ -17,13 +17,13 @@
 							showCopilot="true"
 							productSwitcherPressed=".onproductSwitcherPressed"
 						>
-							<f:searchManager>
+							<!-- <f:searchManager>
 								<f:SearchManager
 									id="pageSearch"
 									placeholder="Search Here"
 									search=".onSearchText"
 								/>
-							</f:searchManager>
+							</f:searchManager> -->
 							<f:profile>
 								<Avatar
 									initials="UI"
